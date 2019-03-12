@@ -14,7 +14,7 @@ export default {
 
 <style scoped lang="scss">
 h2 {
-    margin-top: 80px;
+    margin: 80px 0 20px;
     font-family: Verdana-Italic;
     font-size: 20px;
     color: rgba(0,0,0,0.70);

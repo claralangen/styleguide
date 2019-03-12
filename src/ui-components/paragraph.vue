@@ -1,18 +1,15 @@
 <template>
-  <p>{{content}}</p>
+  <p><slot></slot></p>
 </template>
 
 <script>
 export default {
-  name: "Paragraph",
-  props: {
-    content: String
-  }
+  name: "Paragraph"
 };
 </script>
 
 
-<style scoped lang="scss">
+<style lang="scss">
 p {
     margin-top: 25px;
     font-family: Verdana;
@@ -21,4 +18,7 @@ p {
     letter-spacing: 0;
     line-height: 28px;
 } 
+strong{
+  font-weight: bold;
+}
 </style>

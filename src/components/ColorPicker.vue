@@ -13,10 +13,6 @@
 
 export default {
   name: "ColorPicker",
-  props: {
-    visible : Boolean
-  }
-  ,
   data: function(){
     return{
       colors: ['#E20036','#E65F28','#FFD400','#79C24D','#62C4DD','#B73288','#E52D87','#B51434']
@@ -28,15 +24,14 @@ export default {
 <style lang="scss" scoped>
 @import '../variables.scss';
 .colorpicker{
-  position: absolute;
-  z-index: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  max-width: 70px;
   padding: 30px 15px;
   background: #FFFFFF;
   box-shadow: 1px 0 4px 0 rgba(0,0,0,0.13);
-  transform: translate(-100%);
+  
 }
 .color-list{
   display: flex;

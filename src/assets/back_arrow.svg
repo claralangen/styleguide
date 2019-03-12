@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Path</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-Copy-3" transform="translate(-25.000000, -42.000000)" fill="#818181">
+            <g id="Group-5" transform="translate(25.000000, 32.000000)">
+                <g id="noun_Arrow_2206773" transform="translate(10.000000, 18.500000) scale(-1, 1) translate(-10.000000, -18.500000) translate(0.000000, 10.000000)">
+                    <g id="Group">
+                        <path d="M19.72723,7.7751286 L13.893705,0.613253437 C13.41108,0.0670266075 12.637205,0.0148756098 12.129205,0.435399113 C11.6212467,0.855922616 11.5375383,1.70586718 11.9535383,2.21940643 L16.1073175,7.31433437 L1.25003417,7.31433437 C0.559659167,7.31433437 -7.5e-06,7.88019734 -7.5e-06,8.57818404 C-7.5e-06,9.27621286 0.559659167,9.84204213 1.25003417,9.84204213 L16.1073175,9.84204213 L11.9535383,14.9369911 C11.5375383,15.4504967 11.6311633,16.2885188 12.129205,16.720969 C12.6427883,17.1669424 13.47783,17.0567761 13.893705,16.5431441 L19.72723,9.3812816 C20.1069717,8.84140355 20.0745342,8.29718625 19.72723,7.7751286 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

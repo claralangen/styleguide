@@ -5,5 +5,25 @@ $green: #79C24D;
 $blue: #62C4DD;
 $purple: #B73288;
 $pink: #E52D87;
-$cardinal: #C51444;
+$cardinal: #B51434;
 
+@mixin darken-hover($color,$percent) {
+    background: darken($color, $percent);
+}
+
+.fontFamily-verdana{
+    font-family: 'Verdana';
+}
+.fontFamily-mediametrie{
+    font-family: 'Mediametrie';
+    font-size: 22px;
+}
+.fontWeight-light{
+    font-weight: 100;
+}
+.fontWeight-regular{
+    font-weight: 500;
+}
+.fontWeight-bold{
+    font-weight: 900;
+}
