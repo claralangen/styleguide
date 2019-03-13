@@ -46,17 +46,42 @@
      La typographie Médiamétrie est disponible en romain et italique dans 3 graisses différentes :
       Light, Regular et Bold. Cette palette permet une utilisation riche et variée.
     </Paragraph>
-    <Frame simple>
+    <Frame double v-for="object in weight">
         <template  slot="frame">
-        <p class="fontFamily-mediametrie fontWeight-light">Finesse & Précision</p>
+        <span class="fontFamily-mediametrie" :class="object.classes">{{object.content}}</span>
         </template>
         <template slot="code">
-        <div>
-            <p></p>
-        </div>
+            <span class="codeMono">{{object.code}}</span>
         </template>
     </Frame>
     
+    <Subtitle content="Styles de texte" />
+    <Paragraph>
+     La typographie Médiamétrie est disponible en romain et italique dans 3 graisses différentes :
+      Light, Regular et Bold. Cette palette permet une utilisation riche et variée.
+    </Paragraph>
+    <Frame double v-for="object in style">
+        <template  slot="frame">
+        <span class="fontFamily-mediametrie" :class="object.classes">{{object.content}}</span>
+        </template>
+        <template slot="code">
+            <span class="codeMono">1</span>
+        </template>
+    </Frame>
+
+    <Subtitle content="Position du texte" />
+    <Paragraph>
+     La typographie Médiamétrie est disponible en romain et italique dans 3 graisses différentes :
+      Light, Regular et Bold. Cette palette permet une utilisation riche et variée.
+    </Paragraph>
+    <Frame double v-for="object in position">
+        <template  slot="frame">
+        <span class="fontFamily-mediametrie" :class="object.classes">{{object.content}}</span>
+        </template>
+        <template slot="code">
+            <span class="codeMono">1</span>
+        </template>
+    </Frame>
   </div>
 </template>
 
@@ -75,21 +100,55 @@ export default {
     Subtitle,
     Paragraph,
     Frame
-
+  },
+  data: function(){
+      return{
+          weight:[
+              {content: "finesse & PRÉCISION",classes: "fontWeight-light",code:'classif'},
+              {content: "lisibilité & IDENTITÉ",classes: "fontWeight-regular"},
+              {content: "contraste & IMPACT",classes: "fontWeight-bold  "}
+          ],
+          style:[
+              {content: "Titre 1",classes: "title-primary"},
+              {content: "Titre 2",classes: "title-secondary"},
+              {content: "Sous-titre",classes: "subtitle-primary"},
+              {content: "Sous-titre graphique",classes: "subtitle-secondary"},
+              {content: "Texte courant",classes: "text-primary"},
+              {content: "Texte secondaire",classes: "text-secondary"}
+          ],
+          position:[
+              {content: "Texte à gauche",classes: "text-left text-secondary"},
+              {content: "Texte centré",classes: "text-center text-secondary"},
+              {content: "Texte à droite",classes: "text-right text-secondary"}   
+          ],
+      }
+  },
+  mounted: function(){
+    for(var i = 0; i < this.weight.length; i++){
+        const code = this.weight[i].code;
+        if(code.includes("class")){
+            console.log('ok')
+        }
+    }    
+    
+          
   }
 };
 </script>
 
 <style lang="scss" scoped>
 @import '../variables.scss';
-    p:first-child{
-        margin-top: 0;
+    span{
+        display: inherit;
     }
-    .font-mm{
-        font-family: 'Mediametrie';
-        font-size: 22px;
-    }
-    .font-v{
-        font-size: 22px;
+    .codeMono{
+       font-family: 'Roboto Mono';
+       font-size: 16px;
+       .green{
+           color: #42B983;
+       }
+       .red{
+           color: #DB2C5A;
+       }
     }
 </style>

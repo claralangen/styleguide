@@ -16,6 +16,7 @@
         <li class="color-item"
             v-for="shade in color"
             v-bind:style="{ backgroundColor : shade }"
+            v-on:click = "copyToClipboard"
         >
         {{shade}}
         </li>
@@ -33,6 +34,7 @@
         <li class="color-item grey" v-for="grey in greys"
             v-bind:key="grey"
             v-bind:style="{ backgroundColor : grey }"
+            v-on:click = "copyToClipboard"
         >
         {{grey}}
         </li>
@@ -62,14 +64,24 @@ export default {
               yellow: ['#FFD400','#FAE05C','#F8E999','#FCF3C8'],
               green: ['#79C24D','#AAD35D','#C0DC8B','#DCECBD'],
               blue: ['#62C4DD','#81CFE5','#89D2E5','#CBE9F2'],
-              purple: ['#B73288','#B73288','#C965A5','#D78CBC'],
+              purple: ['#B73288','#C965A5','#D78CBC','#E1A9CD'],
               cardinal: ['#B51434','#D2415E','#F38C9F','#F7BDC9'],
-              pink: ['#E52D87','#EE66A4','#F18DBA','#F6BCD5'],
-              
+              pink: ['#E52D87','#EE66A4','#F18DBA','#F6BCD5'],  
           },
           greys: ['#4B4B4B','#838383','#EAECF0','#F4F5F7']
       }
-  }
+  },
+  methods:{
+      copyToClipboard(event){
+          const copyText = event.target.innerText;
+          document.execCommand( 'copy' , copyText );
+          event.target.innerHTML = 'COPIÉ  <span style="font-size:15px;"> &#128521<span>';
+          intervalID = setTimeout( ()=>{
+            event.target.innerText = copyText;
+          }, 2000
+          )
+      }
+    }
 };
 </script>
 
@@ -86,14 +98,22 @@ export default {
     border-radius: 6px;
 }
 .color-item{
-  text-align: center;
-  padding: 30px 46px;
-  color: white;
+  width: 160px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
   font-size: 12px;
+  mix-blend-mode: multiply;
   &.grey{
       border-radius: 6px;
       margin: 20px 60px 0 0;
 
+  }
+  &:hover{
+      cursor: pointer;
+      box-shadow: inset 4px 10px 0px 200px rgba(0,0,0,0.1);
   }
 }
 </style>

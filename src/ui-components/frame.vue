@@ -1,17 +1,23 @@
 <template>
-    <div v-if="!simple">
+    <div v-if="!clickable && !double">
+        <div class="frame"><slot name="frame"></slot></div>
+         <div class="code code-simple">
+            <slot name="code"></slot>
+        </div>
+    </div>
+    <div v-else-if="!clickable && double" class="frames">
+        <div class="frame"><slot name="frame"></slot></div>
+         <div class="code">
+            <slot name="code"></slot>
+        </div>
+    </div>
+    <div v-else="clickable">
         <div class="frame"><slot name="frame"></slot></div>
          <div v-on:click="openCode" 
               v-bind:class = "{ open : codeOpen}"
               class="code">
             <img src="../assets/close.svg" alt="fermer">
             <slot v-if="codeOpen " name="code"></slot>
-        </div>
-    </div>
-    <div v-else="simple" class="frames">
-        <div class="frame"><slot name="frame"></slot></div>
-         <div class="code">
-            <slot name="code"></slot>
         </div>
     </div>
 </template>
@@ -22,7 +28,8 @@
        name: "Frame",
        props:{
            content: String,
-           simple: Boolean
+           clickable: Boolean,
+           double: Boolean
        },
        data(){
            return{
@@ -41,15 +48,16 @@
 .frames{
     display:flex;
     justify-content: space-between;
+    
     .frame{
-        margin-top: 50px;
+        margin: 10px 5px 0 0;
         padding: 30px 45px;
-        width: 35%;
+        width: 48%;
     }
     .code{
-        margin-top: 50px;
+        margin: 10px 0 0 5px;
         padding: 30px 45px;
-        width: 35%;
+        width: 48%;
     &:hover{
         cursor: auto;
         background-color: #F4F5F7;
@@ -78,6 +86,12 @@
     &:hover{
         cursor:pointer;
         background-color: #E6E6E6;
+    }
+    &-simple{
+        &:hover{
+        cursor:auto;
+        background-color: #F4F5F7;
+    }
     }
 }
 .open{

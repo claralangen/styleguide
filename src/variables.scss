@@ -10,7 +10,16 @@ $cardinal: #B51434;
 @mixin darken-hover($color,$percent) {
     background: darken($color, $percent);
 }
-
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return #000000; // Lighter backgorund, return dark color
+  } @else {
+    @return #ffffff; // Darker background, return light color
+  }
+}
+span{
+  color: rgba(0,0,0,0.50);
+}
 .fontFamily-verdana{
     font-family: 'Verdana';
 }
@@ -26,4 +35,43 @@ $cardinal: #B51434;
 }
 .fontWeight-bold{
     font-weight: 900;
+}
+.title-primary{
+  font-family: 'Mediametrie';
+  font-size: 40px;
+  font-weight: 900;
+}
+.title-secondary{
+  font-family: 'Mediametrie';
+  font-size: 24px;
+  font-weight: 100;
+}
+.subtitle-primary{
+  font-family: 'Mediametrie';
+  font-size: 30px;
+  font-style: italic;
+}
+.subtitle-secondary{
+  font-family: 'Verdana';
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #B2B2B2;
+}
+.text-primary{
+  font-family: 'Verdana';
+  font-size: 18px;
+}
+.text-secondary{
+  font-family: 'Verdana';
+  font-size: 14px;
+}
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
 }

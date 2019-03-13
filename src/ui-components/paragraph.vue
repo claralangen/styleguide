@@ -11,11 +11,10 @@ export default {
 
 <style lang="scss">
 p {
-    margin-top: 25px;
+    margin: 25px 0 40px ;
     font-family: Verdana;
     font-size: 16px;
     color: rgba(0,0,0,0.50);
-    letter-spacing: 0;
     line-height: 28px;
 } 
 strong{
