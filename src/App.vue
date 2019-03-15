@@ -30,7 +30,6 @@
   },
   methods: {
       toggleOverlay(){
-        console.log('oki')
         this.overlay = !this.overlay
       }
   }

@@ -46,7 +46,7 @@
      La typographie Médiamétrie est disponible en romain et italique dans 3 graisses différentes :
       Light, Regular et Bold. Cette palette permet une utilisation riche et variée.
     </Paragraph>
-    <Frame double v-for="object in weight">
+    <Frame double v-for="object in weight" :key="object">
         <template  slot="frame">
         <span class="fontFamily-mediametrie" :class="object.classes">{{object.content}}</span>
         </template>
@@ -60,7 +60,7 @@
      La typographie Médiamétrie est disponible en romain et italique dans 3 graisses différentes :
       Light, Regular et Bold. Cette palette permet une utilisation riche et variée.
     </Paragraph>
-    <Frame double v-for="object in style">
+    <Frame double v-for="object in style" :key="object">
         <template  slot="frame">
         <span class="fontFamily-mediametrie" :class="object.classes">{{object.content}}</span>
         </template>
@@ -74,7 +74,7 @@
      La typographie Médiamétrie est disponible en romain et italique dans 3 graisses différentes :
       Light, Regular et Bold. Cette palette permet une utilisation riche et variée.
     </Paragraph>
-    <Frame double v-for="object in position">
+    <Frame double v-for="object in position" :key="object">
         <template  slot="frame">
         <span class="fontFamily-mediametrie" :class="object.classes">{{object.content}}</span>
         </template>
